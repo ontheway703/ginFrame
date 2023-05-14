@@ -18,6 +18,14 @@ func newHandler() *handler {
 	}
 }
 
+// @Summary 获取用户信息
+// @Schemes
+// @Description 获取用户信息
+// @Tags example
+// @Accept json
+// @Produce json
+// @Success 200 {string} Helloworld
+// @Router /api/user/info [get]
 func (h *handler) Info(c *decorator.RequestContext) (model.Resp, gerror.Error) {
 	params := c.Params().(*model.UserInfoReq)
 	if params == nil {
